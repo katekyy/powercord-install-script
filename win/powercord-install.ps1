@@ -1,6 +1,8 @@
 $build = "b005"
 $base_location = Get-Location
 
+#Requires -RunAsAdministrator
+
 ####
 
 if (Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\instance_*-*")

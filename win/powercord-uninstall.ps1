@@ -1,6 +1,8 @@
 $build = "b005"
 $base_location = Get-Location
 
+#Requires -RunAsAdministrator
+
 ####
 # function prompt { 'PowerShell: ' + (Get-Location) + '> '}
 
