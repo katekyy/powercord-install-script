@@ -1,4 +1,4 @@
-$build = "v005"
+$build = "b005"
 $base_location = Get-Location
 
 #Requires -RunAsAdministrator
@@ -18,8 +18,8 @@ if (Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\
 
 function isInstalled($name)
 {
-    $32BitPrograms = Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
-    $64itPrograms = Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    $32BitPrograms = Get-ItemProperty HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*
+    $64itPrograms = Get-ItemProperty HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*
     $programs_with_that_name = ($32BitPrograms + " " + $64BitPrograms) | Where-Object { $_.DisplayName -match $Name }
     $is_installed = $null -ne $programs_with_that_name
     return $is_installed
@@ -77,9 +77,8 @@ if (!(Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\discordcanary"))
     Write-Host "Starting Discord Canary..." -ForegroundColor yellow
     Invoke-Expression "C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-*\DiscordCanary.exe" | Out-Null
     
-    until (!(Test-Path -Path "C:\Users\GuCom\AppData\Local\DiscordCanary\app-1.0.47\resources\bootstrap\manifest.json")) {
-        Start-Sleep -s 1
-    }
+    Write-Host "Waiting for 20 seconds..." -ForegroundColor yellow
+    Start-Sleep -s 20
 }
 
 if (Get-Process "DiscordCanary" -ErrorAction SilentlyContinue) {
@@ -87,13 +86,13 @@ if (Get-Process "DiscordCanary" -ErrorAction SilentlyContinue) {
     Stop-Process -Name "DiscordCanary" -Force | Out-Null
 }
 
-if (!(Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\powercord\")) {
-    New-Item -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\" -Name "powercord" -ItemType "directory" -Force | Out-Null
-    cd "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\powercord\"
+if (!(Test-Path -Path "C:\discord-canary")) {
+    New-Item -Path "C:\" -Name "discord-canary" -ItemType "directory" -Force | Out-Null
+    cd C:\discord-canary
 }
 
 Start-Sleep -s 1
-git clone "https://github.com/powercord-org/powercord"
+git clone https://github.com/powercord-org/powercord
 cd powercord
 
 Start-Sleep -s 1
