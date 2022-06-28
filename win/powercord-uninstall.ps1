@@ -1,10 +1,9 @@
-$build = "b005"
+$build = "v005"
 $base_location = Get-Location
 
 #Requires -RunAsAdministrator
 
 ####
-# function prompt { 'PowerShell: ' + (Get-Location) + '> '}
 
 if (!(Test-Path -Path "C:\discord-canary") -Or !(Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\instance_*-*")) {
     Write-Host "Powercord Instalation not found." -ForegroundColor red
