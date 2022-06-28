@@ -1,6 +1,6 @@
 #!/bin/sh
 set echo off
-curr_build="b001"
+curr_build="v001"
 
 if [ -d "$HOME/powercord/instance_*-*" ]; then
     echo "Powercord Alredy Installed!"
@@ -30,9 +30,7 @@ else
     exit 1
 fi
 
-set echo on
 sudo echo "Installing Powercord..."
-set echo off
 
 sudo $curr_distro_pkgmng grep
 
@@ -51,7 +49,7 @@ if ! ls /bin | grep "npm"; then
     sudo $curr_distro_pkgmng npm
 fi
 
-cd ~
+cd
 mkdir powercord
 cd powercord
 
