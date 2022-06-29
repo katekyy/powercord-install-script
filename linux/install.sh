@@ -14,15 +14,15 @@ if [ $curr_distro == *"ubuntu"* ]; then
 elif [ $curr_distro == *"arch"* ]; then
     curr_distro_pkgmng="pacman -S --noconfirm"
 elif [ $curr_distro == *"fedora"* ]; then
-    curr_distro_pkgmng="dnf install"
+    curr_distro_pkgmng="dnf install -y"
 elif [ $curr_distro == *"cent"* ]; then
-    curr_distro_pkgmng="yum install"
+    curr_distro_pkgmng="yum install -y"
 elif [ $curr_distro == *"suse"* ]; then
-    curr_distro_pkgmng="zypper install"
+    curr_distro_pkgmng="zypper install -y"
 elif [ $curr_distro == *"void"* ]; then
-    curr_distro_pkgmng="xbps-install -S"
+    curr_distro_pkgmng="xbps-install -S --no-confirm"
 elif [ $curr_distro == *"solus"* ]; then
-    curr_distro_pkgmng="eopkg install"
+    curr_distro_pkgmng="eopkg install -y"
 elif [ $curr_distro == *"debian"* ]; then
     curr_distro_pkgmng="apt-get install -y"
 else
@@ -47,6 +47,11 @@ fi
 if ! ls /bin | grep "npm"; then
     echo "Installing NPM..."
     sudo $curr_distro_pkgmng npm
+fi
+
+if ! ls /bin | grep "discord-canary"; then
+    echo "Installing Discord Canary"
+    sudo $curr_distro_pkgmng discord-canary
 fi
 
 cd
