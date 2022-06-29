@@ -20,3 +20,5 @@ sudo rm ./instance_*-*
 
 echo "Powercord Successfuly Uninstalled!"
 echo "Done!"
+
+exit 0

@@ -66,3 +66,5 @@ touch "$HOME/powercord/instance_$curr_build-$(date +%D)_$(date +%T)"
 set echo on
 echo "Powercord Successfuly Installed!"
 echo "Done!"
+
+exit 0
