@@ -38,7 +38,7 @@ try {
 
 if (!($choco_installed)) {
     Write-Host "Chocolatey is not installed. Installing..." -ForegroundColor yellow
-    Install-Package chocolatey -ProviderName PowerShellGet -Force | Out-Null
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) | Out-Null
 }
 choco upgrade chocolatey -y | Out-Null
 
