@@ -32,7 +32,9 @@
 
 First, you need to download scripts:
 ```
-PS> git clone https://github.com/katekyy/powercord-install-script && cd win
+PS> git clone https://github.com/katekyy/powercord-install-script
+PS> cd powercord-install-script
+PS> cd win
 ```
 
 <br/>
