@@ -77,7 +77,7 @@ if (!(Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\discordcanary"))
     Write-Host "Starting Discord Canary..." -ForegroundColor yellow
     Invoke-Expression "C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-*\DiscordCanary.exe" | Out-Null
     
-    until (!(Test-Path -Path "C:\Users\GuCom\AppData\Local\DiscordCanary\app-1.0.47\resources\bootstrap\manifest.json")) {
+    until (!(Test-Path -Path "C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-1.0.47\resources\bootstrap\manifest.json")) {
         Start-Sleep -s 1
     }
 }
