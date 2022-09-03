@@ -132,7 +132,7 @@ try {
 cd $base_location
 
 Write-Host "Starting Discord Canary..." -ForegroundColor blue
-Invoke-Expression "C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-*\DiscordCanary.exe" | Out-Null
+Invoke-Expression "'C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-*\DiscordCanary.exe'" | Out-Null
 
 Start-Sleep -s 2
 Write-Host "Done! [8x00000]" -ForegroundColor green
