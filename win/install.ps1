@@ -8,7 +8,7 @@ $base_location = Get-Location
 if (Test-Path -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\instance_*-*")
 {
     Write-Host "Powercord Installer instance file located. Please uninstall powercord with:" -ForegroundColor red
-    Write-Host "'.\powercord-uninstall.ps1' [8x00001]" -ForegroundColor red
+    Write-Host "'.\uninstall.ps1' [001]" -ForegroundColor red
     Write-Host "Exiting..." -ForegroundColor red
     Sleep -s 1
     Exit 1
@@ -102,7 +102,7 @@ try {
     npm i | Out-Null
 } catch
 {
-    Write-Host "Failed to install Node dependencies. [8x00010]" -ForegroundColor red
+    Write-Host "Failed to install Node dependencies. [010]" -ForegroundColor red
     Write-Host "Exiting..." -ForegroundColor red
     Exit 1
 }
@@ -113,7 +113,7 @@ try {
     npm run unplug | Out-Null
 } catch 
 {
-    Write-Host "Failed to unplug Discord. [8x00011]" -ForegroundColor red
+    Write-Host "Failed to unplug Discord. [011]" -ForegroundColor red
     Write-Host "Exiting..." -ForegroundColor red
     Exit 1
 }
@@ -124,7 +124,7 @@ try {
     npm run plug | Out-Null
 } catch 
 {
-    Write-Host "Failed to plug into Discord. [8x00100]" -ForegroundColor red
+    Write-Host "Failed to plug into Discord. [100]" -ForegroundColor red
     Write-Host "Exiting..." -ForegroundColor red
     Exit 1
 }
@@ -135,7 +135,7 @@ Write-Host "Starting Discord Canary..." -ForegroundColor blue
 Invoke-Expression "'C:\Users\$env:USERNAME\AppData\Local\DiscordCanary\app-*\DiscordCanary.exe'" | Out-Null
 
 Start-Sleep -s 2
-Write-Host "Done! [8x00000]" -ForegroundColor green
+Write-Host "Done! [000]" -ForegroundColor green
 
 ####
 
