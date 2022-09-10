@@ -39,6 +39,10 @@ PS> cd win
 
 <br/>
 
+> **Warning**:
+> If you'll got error no. 001, and you are absolutely sure that you dont have powercord installed, then type this command:
+> `Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\instance_*-*"`
+
 Then, you have two scripts there, one to install powercord, and one to uninstall it.
 ```
 PS> .\install.ps1
