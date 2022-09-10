@@ -25,7 +25,7 @@
 
 ## Guide For Windows
 
-> **Warning**:
+> **Note**:
 > You need to run powershell in admin mode and have powershell in version 5.1 or up in order to run these scripts!
 
 <br/>
@@ -40,7 +40,7 @@ PS> cd win
 <br/>
 
 > **Warning**:
-> If you'll get error no. 001, and you are absolutely sure that you dont have powercord installed, then type this command:
+> If you'll get error [001], and you are absolutely sure that you dont have powercord installed, then type this command:
 > `Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Roaming\powercord_installer\instance_*-*"`
 
 Then, you have two scripts there, one to install powercord, and one to uninstall it.
